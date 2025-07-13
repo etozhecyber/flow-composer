@@ -41,8 +41,8 @@ This allows you to leverage the full power of your favorite code editor to craft
 
 1.  Clone the repository (or download the source code):
     ```bash
-    git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-    cd YOUR_REPOSITORY
+    git clone https://github.com/etozhecyber/flow-composer.git
+    cd flow-composer
     ```
 2.  Install dependencies:
     ```bash
