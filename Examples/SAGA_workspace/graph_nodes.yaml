@@ -1,0 +1,43 @@
+- id: start
+  type: start
+  position:
+    x: 0
+    y: 0
+  data: {}
+  deletable: false
+- id: end
+  type: end
+  position:
+    x: 1769.459749926241
+    y: -52.70270234917497
+  data:
+    agentId: 0197b1f6-f333-7ffb-9c87-46e53827e97d
+  deletable: false
+- id: 0197c059-105a-7883-b7c5-ccb42460a6d4
+  type: agent
+  position:
+    x: 239.1258941344778
+    y: -190
+  data:
+    agentId: 0197c059-105a-7883-b7c5-ccb42460a6d4
+- id: 0197c059-1061-7883-b7c5-d3135627d139
+  type: agent
+  position:
+    x: 625.5296852646637
+    y: -189.55185979971387
+  data:
+    agentId: 0197c059-1061-7883-b7c5-d3135627d139
+- id: 0197c059-106d-7883-b7c5-dfe5a68cf412
+  type: agent
+  position:
+    x: 1008.1904172286897
+    y: -185.36995355610676
+  data:
+    agentId: 0197c059-106d-7883-b7c5-dfe5a68cf412
+- id: 0197c059-1074-7883-b7c5-e2e00e38647a
+  type: agent
+  position:
+    x: 1381.6397422350215
+    y: -183.10938130394322
+  data:
+    agentId: 0197c059-1074-7883-b7c5-e2e00e38647a

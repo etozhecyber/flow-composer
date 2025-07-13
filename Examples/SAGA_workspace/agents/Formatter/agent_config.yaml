@@ -1,0 +1,45 @@
+name: Formatter
+description: ''
+targetApiType: chat
+apiSource: astrsk-ai
+modelId: gemini-2.5-flash-preview-05-20
+modelName: gemini-2.5-flash-preview-05-20
+promptMessages:
+- type: plain
+  enabled: true
+  role: system
+  promptBlocks:
+  - name: System
+    template: !include 'prompts/System.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:29:34.520Z'
+    updatedAt: '2025-06-30T04:29:34.520Z'
+    id: 0197bf18-f9b8-7dd3-84ce-4155df3c29f3
+  createdAt: '2025-06-30T04:29:34.520Z'
+  id: 0197bf18-f9b9-7dd3-84ce-4e43b93b31b0
+- type: plain
+  enabled: true
+  role: user
+  promptBlocks:
+  - name: Input
+    template: !include 'prompts/Input.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:29:34.521Z'
+    updatedAt: '2025-06-30T04:29:34.521Z'
+    id: 0197bf18-f9b9-7dd3-84ce-52b9e5905c82
+  createdAt: '2025-06-30T04:29:34.521Z'
+  id: 0197bf18-f9b9-7dd3-84ce-5cccc60f7930
+textPrompt: ''
+enabledParameters: {}
+parameterValues: {}
+enabledStructuredOutput: false
+outputFormat: text_output
+schemaName: response
+schemaFields: []
+tokenCount: 0
+color: '#FCA5A5'
+createdAt: '2025-06-30T10:19:11.861Z'
+updatedAt: '2025-06-30T10:19:11.861Z'
+agentId: 0197c059-1074-7883-b7c5-e2e00e38647a

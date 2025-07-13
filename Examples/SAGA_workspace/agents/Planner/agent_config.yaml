@@ -1,0 +1,132 @@
+name: Planner
+description: ''
+targetApiType: chat
+apiSource: astrsk-ai
+modelId: gemini-2.5-flash-preview-05-20
+modelName: gemini-2.5-flash-preview-05-20
+promptMessages:
+- type: plain
+  enabled: true
+  role: system
+  promptBlocks:
+  - name: System
+    template: !include 'prompts/System.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:17.775Z'
+    updatedAt: '2025-06-30T04:41:17.775Z'
+    id: 0197bf23-b4cf-7cce-a500-100571697c91
+  createdAt: '2025-06-30T04:41:17.775Z'
+  id: 0197bf23-b4cf-7cce-a500-1b3d43f0e494
+- type: plain
+  enabled: true
+  role: user
+  promptBlocks:
+  - name: Character Information
+    template: !include 'prompts/Character_Information.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:17.775Z'
+    updatedAt: '2025-06-30T04:41:17.775Z'
+    id: 0197bf23-b4cf-7cce-a500-26433547a610
+  createdAt: '2025-06-30T04:41:17.775Z'
+  id: 0197bf23-b4cf-7cce-a500-2f89622045ad
+- type: history
+  enabled: true
+  historyType: split
+  start: 0
+  end: 3
+  countFromEnd: true
+  userPromptBlocks:
+  - name: History
+    template: '{%- if turn.variables -%}
+
+      {{turn.variables.formatter.response}}
+
+      {%- else -%}
+
+      {{turn.content}}
+
+      {%- endif -%}'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:17.775Z'
+    updatedAt: '2025-06-30T04:41:17.775Z'
+    id: 0197bf23-b4cf-7cce-a500-35c1255acebe
+  assistantPromptBlocks:
+  - name: History
+    template: '{%- if turn.variables -%}
+
+      {{turn.variables.formatter.response}}
+
+      {%- else -%}
+
+      {{turn.content}}
+
+      {%- endif -%}'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:17.775Z'
+    updatedAt: '2025-06-30T04:41:17.775Z'
+    id: 0197bf23-b4cf-7cce-a500-35c1255acebe
+  userMessageRole: user
+  charMessageRole: assistant
+  subCharMessageRole: user
+  createdAt: '2025-06-30T04:41:17.775Z'
+  id: 0197bf23-b4cf-7cce-a500-3cab28ac1019
+- type: plain
+  enabled: true
+  role: system
+  promptBlocks:
+  - name: Guidelines
+    template: !include 'prompts/Guidelines.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:17.775Z'
+    updatedAt: '2025-06-30T04:41:17.775Z'
+    id: 0197bf23-b4cf-7cce-a500-4517396c8da8
+  createdAt: '2025-06-30T04:41:17.775Z'
+  id: 0197bf23-b4cf-7cce-a500-4f2e9fcbc35e
+textPrompt: ''
+enabledParameters: {}
+parameterValues: {}
+enabledStructuredOutput: true
+outputFormat: structured_output
+schemaName: response
+schemaDescription: ''
+schemaFields:
+- name: scene_description
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/scene_description.md'
+- name: atmosphere_change
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/atmosphere_change.md'
+- name: npc_reactions
+  type: string
+  array: true
+  required: true
+  description: !include 'schema/npc_reactions.md'
+- name: environmental_changes
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/environmental_changes.md'
+- name: tension_level
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/tension_level.md'
+- name: pacing_tempo
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/pacing_tempo.md'
+tokenCount: 0
+color: '#FDBA74'
+createdAt: '2025-06-30T10:19:11.843Z'
+updatedAt: '2025-06-30T10:19:11.843Z'
+agentId: 0197c059-1061-7883-b7c5-d3135627d139

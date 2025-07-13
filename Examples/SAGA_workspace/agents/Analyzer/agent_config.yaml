@@ -1,0 +1,156 @@
+name: Analyzer
+description: ''
+targetApiType: chat
+apiSource: astrsk-ai
+modelId: gemini-2.5-flash-preview-05-20
+modelName: gemini-2.5-flash-preview-05-20
+promptMessages:
+- type: plain
+  enabled: true
+  role: system
+  promptBlocks:
+  - name: System
+    template: !include 'prompts/System.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:10.973Z'
+    updatedAt: '2025-06-30T04:41:10.973Z'
+    id: 0197bf23-9a3d-7cce-a4ff-d30fdc4d1707
+  createdAt: '2025-06-30T04:41:10.973Z'
+  id: 0197bf23-9a3d-7cce-a4ff-d91b8e818f26
+- type: plain
+  enabled: true
+  role: user
+  promptBlocks:
+  - name: Character Information
+    template: !include 'prompts/Character_Information.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:10.973Z'
+    updatedAt: '2025-06-30T04:41:10.973Z'
+    id: 0197bf23-9a3d-7cce-a4ff-e20d0bf7628f
+  createdAt: '2025-06-30T04:41:10.973Z'
+  id: 0197bf23-9a3d-7cce-a4ff-ecc82f7d7d5c
+- type: history
+  enabled: true
+  historyType: split
+  start: 0
+  end: 3
+  countFromEnd: true
+  userPromptBlocks:
+  - name: History
+    template: '{%- if turn.variables -%}
+
+      {{turn.variables.formatter.response}}
+
+      {%- else -%}
+
+      {{turn.content}}
+
+      {%- endif -%}'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:10.973Z'
+    updatedAt: '2025-06-30T04:41:10.973Z'
+    id: 0197bf23-9a3d-7cce-a4ff-f66c025cbb6b
+  assistantPromptBlocks:
+  - name: History
+    template: '{%- if turn.variables -%}
+
+      {{turn.variables.formatter.response}}
+
+      {%- else -%}
+
+      {{turn.content}}
+
+      {%- endif -%}'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:10.973Z'
+    updatedAt: '2025-06-30T04:41:10.973Z'
+    id: 0197bf23-9a3d-7cce-a4ff-f66c025cbb6b
+  userMessageRole: user
+  charMessageRole: assistant
+  subCharMessageRole: user
+  createdAt: '2025-06-30T04:41:10.973Z'
+  id: 0197bf23-9a3d-7cce-a4ff-fb3534e81087
+- type: plain
+  enabled: true
+  role: user
+  promptBlocks:
+  - name: Guidelines
+    template: !include 'prompts/Guidelines.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:10.973Z'
+    updatedAt: '2025-06-30T04:41:10.973Z'
+    id: 0197bf23-9a3d-7cce-a500-051092faebce
+  createdAt: '2025-06-30T04:41:10.973Z'
+  id: 0197bf23-9a3d-7cce-a500-0b13d7ea6c02
+textPrompt: ''
+enabledParameters: {}
+parameterValues: {}
+enabledStructuredOutput: true
+outputFormat: structured_output
+schemaName: response
+schemaDescription: ''
+schemaFields:
+- name: location
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/location.md'
+- name: npcs_present
+  type: string
+  array: true
+  required: true
+  description: !include 'schema/npcs_present.md'
+- enum:
+  - possible
+  - difficult
+  - impossible
+  name: action_feasibility
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/action_feasibility.md'
+- enum:
+  - appropriate
+  - questionable
+  - inappropriate
+  name: action_appropriateness
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/action_appropriateness.md'
+- enum:
+  - critical_success
+  - success
+  - partial_success
+  - failure
+  - critical_failure
+  name: success_level
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/success_level.md'
+- name: primary_result
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/primary_result.md'
+- name: side_effects
+  type: string
+  array: true
+  required: true
+  description: !include 'schema/side_effects.md'
+- name: new_information
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/new_information.md'
+tokenCount: 0
+color: '#A5B4FC'
+createdAt: '2025-06-30T10:19:11.836Z'
+updatedAt: '2025-06-30T10:19:11.836Z'
+agentId: 0197c059-105a-7883-b7c5-ccb42460a6d4

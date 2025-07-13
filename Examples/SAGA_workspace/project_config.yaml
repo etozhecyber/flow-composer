@@ -1,0 +1,5 @@
+name: SAGA (Sequential Analysis and Gaming Agent)
+description: ''
+createdAt: '2025-06-30T10:19:58.442Z'
+updatedAt: '2025-06-30T10:19:58.442Z'
+responseTemplate: !include 'response_template.md'

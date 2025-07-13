@@ -1,0 +1,122 @@
+name: Actor
+description: ''
+targetApiType: chat
+apiSource: astrsk-ai
+modelId: gemini-2.5-flash-preview-05-20
+modelName: gemini-2.5-flash-preview-05-20
+promptMessages:
+- type: plain
+  enabled: true
+  role: system
+  promptBlocks:
+  - name: System
+    template: !include 'prompts/System.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:20.637Z'
+    updatedAt: '2025-06-30T04:41:20.637Z'
+    id: 0197bf23-bffd-7cce-a500-5450c7166f09
+  createdAt: '2025-06-30T04:41:20.637Z'
+  id: 0197bf23-bffd-7cce-a500-5f9a075486dd
+- type: plain
+  enabled: true
+  role: user
+  promptBlocks:
+  - name: Character Information
+    template: !include 'prompts/Character_Information.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:20.637Z'
+    updatedAt: '2025-06-30T04:41:20.637Z'
+    id: 0197bf23-bffd-7cce-a500-645127af84a9
+  createdAt: '2025-06-30T04:41:20.637Z'
+  id: 0197bf23-bffd-7cce-a500-696cd9eb8a86
+- type: history
+  enabled: true
+  historyType: split
+  start: 0
+  end: 8
+  countFromEnd: true
+  userPromptBlocks:
+  - name: History
+    template: '{%- if turn.variables -%}
+
+      {{turn.variables.formatter.response}}
+
+      {%- else -%}
+
+      {{turn.content}}
+
+      {%- endif -%}'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:20.637Z'
+    updatedAt: '2025-06-30T04:41:20.637Z'
+    id: 0197bf23-bffd-7cce-a500-71f2e0cc0214
+  assistantPromptBlocks:
+  - name: History
+    template: '{%- if turn.variables -%}
+
+      {{turn.variables.formatter.response}}
+
+      {%- else -%}
+
+      {{turn.content}}
+
+      {%- endif -%}'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:20.637Z'
+    updatedAt: '2025-06-30T04:41:20.637Z'
+    id: 0197bf23-bffd-7cce-a500-71f2e0cc0214
+  userMessageRole: user
+  charMessageRole: assistant
+  subCharMessageRole: user
+  createdAt: '2025-06-30T04:41:20.637Z'
+  id: 0197bf23-bffd-7cce-a500-7cd114b28c40
+- type: plain
+  enabled: true
+  role: user
+  promptBlocks:
+  - name: Guidelines
+    template: !include 'prompts/Guidelines.md'
+    isDeleteUnnecessaryCharacters: false
+    type: plain
+    createdAt: '2025-06-30T04:41:20.637Z'
+    updatedAt: '2025-06-30T04:41:20.637Z'
+    id: 0197bf23-bffd-7cce-a500-860fa7b9f416
+  createdAt: '2025-06-30T04:41:20.637Z'
+  id: 0197bf23-bffd-7cce-a500-8c9089be5866
+textPrompt: ''
+enabledParameters: {}
+parameterValues: {}
+enabledStructuredOutput: true
+outputFormat: structured_output
+schemaName: response
+schemaDescription: ''
+schemaFields:
+- name: scene_focus
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/scene_focus.md'
+- name: emotional_tone
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/emotional_tone.md'
+- name: narration
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/narration.md'
+- name: main_character
+  type: string
+  array: false
+  required: true
+  description: !include 'schema/main_character.md'
+tokenCount: 0
+color: '#BEF264'
+createdAt: '2025-06-30T10:19:11.854Z'
+updatedAt: '2025-06-30T10:19:11.854Z'
+agentId: 0197c059-106d-7883-b7c5-dfe5a68cf412
